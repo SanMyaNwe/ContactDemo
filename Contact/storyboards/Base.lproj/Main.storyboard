@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XjJ-Tt-iaO">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Contacts-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="HomeView" id="BYZ-38-t0r" customClass="HomeView" customModule="Contact" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Acz-lg-nRU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="kvh-cj-ORc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ape-Cs-P3z"/>
+                                </constraints>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kgY-3T-CI1">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="kvh-cj-ORc" firstAttribute="leading" secondItem="VN9-D2-fR4" secondAttribute="leading" id="6xs-KF-S6G"/>
+                            <constraint firstItem="kvh-cj-ORc" firstAttribute="trailing" secondItem="VN9-D2-fR4" secondAttribute="trailing" id="Rx5-Uz-1AM"/>
+                            <constraint firstItem="VN9-D2-fR4" firstAttribute="trailing" secondItem="kgY-3T-CI1" secondAttribute="trailing" id="be8-yA-Y87"/>
+                            <constraint firstItem="kgY-3T-CI1" firstAttribute="top" secondItem="kvh-cj-ORc" secondAttribute="bottom" constant="8" id="cOD-FB-7hM"/>
+                            <constraint firstItem="kvh-cj-ORc" firstAttribute="top" secondItem="VN9-D2-fR4" secondAttribute="top" id="vUs-tY-zRq"/>
+                            <constraint firstItem="VN9-D2-fR4" firstAttribute="bottom" secondItem="kgY-3T-CI1" secondAttribute="bottom" id="wtb-Gv-eY3"/>
+                            <constraint firstItem="kgY-3T-CI1" firstAttribute="leading" secondItem="VN9-D2-fR4" secondAttribute="leading" id="xRx-fT-a2T"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VN9-D2-fR4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contacts" id="WGk-1D-Q0J">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="WdY-Hg-KdY">
+                            <connections>
+                                <action selector="onClickAdd:" destination="BYZ-38-t0r" id="S6j-3b-Npg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contactSearchBar" destination="kvh-cj-ORc" id="Wtl-4s-X4U"/>
+                        <outlet property="contactTableView" destination="kgY-3T-CI1" id="sbG-pT-cql"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="98.4375"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GOG-cg-kTU">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rta-nS-xQe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjJ-Tt-iaO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GvT-ao-TN0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3Xs-49-6ng"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.4375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
