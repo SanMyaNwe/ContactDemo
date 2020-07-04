@@ -53,7 +53,7 @@ class HomeView: UIViewController {
             let phoneNo = alert.textFields![1].text ?? ""
             
             if phoneNo.isEmpty {
-                //TODO
+                
             }
             
             ContactPersistenceService.shared.saveContact(name: name, phoneNo: phoneNo)
